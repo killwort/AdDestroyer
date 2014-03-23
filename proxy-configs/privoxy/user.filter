@@ -1,0 +1,2 @@
+FILTER: inject-ad-destroyer
+s|</head>|<script type="text/javascript" src="http://192.168.14.254/sd/master.js"></script></head>|sigU

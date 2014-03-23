@@ -1,0 +1,7 @@
+{+server-header-tagger{content-type}}
+/
+
+{+filter{inject-ad-destroyer}}
+TAG:TEXT/HTML
+TAG:TEXT/XHTML
+TAG:APPLICATION/XHTML+XML
