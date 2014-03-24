@@ -57,7 +57,7 @@
 		},
 		immediate:function(rule){invokeAction(rule);},
 		periodical:function(rule){},
-		click:function(rule){},
+		click: function (rule) {},
 		domChange: function (rule) { domChangeActions.push(rule); }
 	};
 	window.adDestroyer=function(rules){
