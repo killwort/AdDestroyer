@@ -16,14 +16,14 @@ Injection can be performed using one of the following methods:
 ```
 // ==UserScript==
 // @name        Ad destroyer HTTPS injector
-// @namespace   http://sufler.ru/ad-destroyer
-// @include     https://*
+// @namespace   http://tempuri.org/ad-destroyer
+// @include     *
 // @version     1
 // @grant       none
 // ==/UserScript==
 var hostScript=document.createElement('script');
 hostScript.setAttribute('type','text/javascript');
-hostScript.setAttribute('src',window.location.protocol+'//ad-destroyer.local/master.js');
+hostScript.setAttribute('src',window.location.protocol+'//<your host for adDestroyer goes here>/master.js');
 document.getElementsByTagName('head')[0].appendChild(hostScript);
 ```
-* **Recomended** Use system-wide filtering proxy (like [http://www.privoxy.org/](privoxy)). Configuration file examples are supplied in proxy-configs folder.
+* **Recomended** Use system-wide filtering proxy (like [Privoxy](http://www.privoxy.org/)). Configuration file examples are supplied in proxy-configs folder.
