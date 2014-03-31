@@ -1,0 +1,12 @@
+adDestroyer([{
+	on:'domReady',
+	action:function($){
+		$('.no_amcu,noindex,.amsb').remove();
+	}
+},
+{
+	on:'domChange',
+	action:function($){
+		$('.no_amcu,noindex,.amsb').remove();
+	}
+}]);

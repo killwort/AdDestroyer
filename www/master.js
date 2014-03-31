@@ -15,8 +15,34 @@
         this.remove = function() {
             me.each(function(e) { e.parentNode.removeChild(e); });
         };
+	this.closest = function(a){
+		var rv=new $$('body');
+		rv.elems=[];
+		a=a.toUpperCase();
+		me.each(function(e){
+			while(e){
+				if(e.tagName==a)break;
+				e=e.parentNode;
+			}
+			if(e)rv.elems.push(e);
+		});
+		return rv;
+	}
         this.css = function() {
-            console.log(arguments);
+		var a=arguments;
+		if(a.length==1){
+			for(var k in a[0]){
+				me.css(k,a[0][k]);
+			}
+		}else{
+			me.each(function(e){
+				for(var i=0;i<a.length;i+=2){
+					e.style.removeProperty(a[i]);
+					e.style.setProperty(a[i],a[i+1]);
+				}
+			});
+		}
+            //console.log(arguments);
         };
     };
     var $ = function (selector) {
@@ -25,7 +51,7 @@
 	var invokeAction = function (rule) {
 	    rule.action($);
 	};
-	var isDomReady = false;
+	var isDomReady = /^loaded|^i|^c/.test(d.readyState);
     var domReadyActions = [];
     var domReadyHandler;
     d.addEventListener('DOMContentLoaded', domReadyHandler=function () {
