@@ -75,7 +75,7 @@
             inDomChangeObserver = false;
         }
     });
-    observer.observe(document.querySelector('body'), { attributes: true, childList: true, subtree: true });
+
 	var onHandlers={
 		domReady:function(rule) {
 		    if (isDomReady)invokeAction(rule);
@@ -86,6 +86,7 @@
 		click: function (rule) {},
 		domChange: function (rule) { domChangeActions.push(rule); }
 	};
+	onHandlers.domReady({action:function(){observer.observe(document.querySelector('body'), { attributes: true, childList: true, subtree: true });}});
 	window.adDestroyer=function(rules){
 		for(var i=0;i<rules.length;i++){
 			if(!rules[i].on||!onHandlers[rules[i].on])rules[i].on='domReady';
